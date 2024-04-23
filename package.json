@@ -2,6 +2,10 @@
 {
     "name": "joypm",
     "description": "The theme of joy.pm",
+    "keywords": [
+        "ghost-theme",
+        "joypm"
+    ],
     "version": "0.1.0",
     "license": "MIT",
     "author": {
