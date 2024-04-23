@@ -29,9 +29,6 @@ into the {body} of the default.hbs template --}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
             {{/match}}
-            {{#if @site.description}}
-                <p class="site-description">{{@site.description}}</p>
-            {{/if}}
         </div>
     {{/match}}
 
@@ -52,11 +49,13 @@ into the {body} of the default.hbs template --}}
     </div>
 
     <div class="right">
-      <img id="logo" src="/img/minilogo.png"/>
+      <img id="logo" src="{{asset "images/minilogo.png"}}" />
       <br>
       <h1>The joy of programming</h1>
 
-      <p>A tiny scrapbook for ideas on software development.</p>
+      {{#if @site.description}}
+          <p class="site-description">{{@site.description}}</p>
+      {{/if}}
     </div>
   </div>
 </main>
