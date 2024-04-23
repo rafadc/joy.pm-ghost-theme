@@ -8,6 +8,7 @@ jobs:
   deploy:
     runs-on: docker
     steps:
+      - run: apt update && apt install -y zip
       - uses: actions/checkout@v4
       - name: Deploy Ghost Theme
         uses: https://github.com/TryGhost/action-deploy-theme@v1
