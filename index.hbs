@@ -39,15 +39,24 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-<div class="inner posts">
-
-    <div class="post-feed">
+  <div class="container">
+    <div class="left">
+      <h1># Latest blog posts</h1>
+      <div class="post-feed">
         {{#foreach posts}}
             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
         {{/foreach}}
+      </div>
+      {{pagination}}
     </div>
 
-    {{pagination}}
+    <div class="right">
+      <img id="logo" src="/img/minilogo.png"/>
+      <br>
+      <h1>The joy of programming</h1>
 
-</div>
+      <p>A tiny scrapbook for ideas on software development.</p>
+    </div>
+  </div>
 </main>
