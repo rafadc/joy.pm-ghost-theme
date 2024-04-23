@@ -1,0 +1,111 @@
+body {
+    background-color: #282c34;
+    color: #ffb300;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 20px 60px;
+    line-height: 1.7em;
+    margin-top: 80px;
+    font-size: 18px;
+}
+
+strong {
+    color: #FED36D;
+}
+
+header {
+    background-color: #000000;
+    position: fixed;
+    width: 100%;
+    height: 25px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding-left: 70px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+header span a {
+    margin-right: 20px;
+    color: #ffb300;
+}
+
+footer {
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 70px;
+}
+
+footer span {
+    margin-right: 20px;
+}
+
+footer span .branch {
+    color: #008800;
+}
+
+footer .filetype {
+    float: right;
+    margin-right: 200px;
+}
+
+h1 {
+    color: #51afef;
+    font-size: 2em;
+}
+
+h2 {
+    color: #98be65;
+    font-size: 1.2em;
+}
+
+h3 {
+    color: #ff6c6b;
+    font-size: 1.1em;
+}
+
+a {
+    color: #9AB8FA;
+}
+
+img {
+    max-width: 100%;
+}
+
+#logo {
+    margin: 10px;
+    width: 25%;
+}
+
+.container {
+    display: flex;
+}
+
+.left {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.highlight {
+    padding: 30px 200px;
+}
+
+pre {
+    padding: 10px;
+}
+
+code {
+    line-height: 1em;
+    font-size: 1em;
+}
+
+.content {
+    width: 80%;
+    text-align: justify;
+    text-justify: inter-word;
+}
