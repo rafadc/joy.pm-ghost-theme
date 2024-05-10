@@ -111,7 +111,7 @@ code {
     // required by gcsan to properly validate the theme
 }
 
-.figcaption {
+figcaption {
     font-size: 0.8em;
     text-align: center;
     font-style: italic;
