@@ -73,10 +73,6 @@ a {
     color: #9AB8FA;
 }
 
-img {
-    max-width: 100%;
-}
-
 #logo {
     margin: 10px;
     width: 25%;
@@ -113,4 +109,10 @@ code {
 .kg-width-full img,
 .kg-width-wide img{
     // required by gcsan to properly validate the theme
+}
+
+.figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    font-style: italic;
 }
