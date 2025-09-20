@@ -5,15 +5,11 @@ deploy-ghost-theme:
     - npm install -g @tryghost/admin-api
     - npm install -g gscan
   script:
-    - # Validate theme
     - gscan .
-    - # Deploy to Ghost
-    - |
-      curl -X POST \
-        -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" \
-        -F "file=@$(zip -r theme.zip . -x "*.git*" "node_modules/*" ".gitlab-ci.yml")" \
-        "$GHOST_API_URL/ghost/api/admin/themes/upload/"
+    - zip -r theme.zip . -x "*.git*" "node_modules/*" ".gitlab-ci.yml"
+    - curl -X POST -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" -F "file=@theme.zip" "$GHOST_API_URL/ghost/api/admin/themes/upload/"
   variables:
     GHOST_API_URL: "https://joy.pm"
   only:
     - main
+
