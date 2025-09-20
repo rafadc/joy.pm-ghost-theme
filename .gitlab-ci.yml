@@ -7,9 +7,8 @@ deploy-ghost-theme:
   script:
     - gscan .
     - zip -r theme.zip . -x "*.git*" "node_modules/*" ".gitlab-ci.yml"
-    - curl -X POST -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" -F "file=@theme.zip" "$GHOST_API_URL/ghost/api/admin/themes/upload/"
+    - 'curl -X POST -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" -F "file=@theme.zip" "https://joy.pm/ghost/api/admin/themes/upload/"'
   variables:
     GHOST_API_URL: "https://joy.pm"
   only:
     - main
-
