@@ -2,6 +2,7 @@ deploy-ghost-theme:
   stage: deploy
   image: node:18
   before_script:
+    - apt-get install -y zip
     - npm install -g @tryghost/admin-api
     - npm install -g gscan
   script:
