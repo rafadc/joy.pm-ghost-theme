@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y zip
+          sudo apt-get install -y zip jq
           npm install -g gscan
 
       - name: Validate theme
@@ -34,7 +34,20 @@ jobs:
         env:
           GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
         run: |
-          curl -X POST \
+          set -euo pipefail
+          http_code=$(curl -sS -o response.json -w "%{http_code}" -X POST \
             -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" \
             -F "file=@theme.zip" \
-            "https://joy.pm/ghost/api/admin/themes/upload/"
+            "https://joy.pm/ghost/api/admin/themes/upload/")
+          echo "HTTP ${http_code}"
+          echo "Response:"
+          cat response.json
+          if [ "${http_code}" -ge 400 ]; then
+            echo "Upload failed with HTTP ${http_code}"; exit 1; fi
+          if command -v jq >/dev/null 2>&1; then
+            if jq -e '.errors? // empty' response.json >/dev/null; then
+              echo "Ghost API reported errors:"; jq '.errors' response.json; exit 1; fi
+          else
+            if grep -q '"errors"' response.json; then
+              echo "Ghost API reported errors"; exit 1; fi
+          fi
