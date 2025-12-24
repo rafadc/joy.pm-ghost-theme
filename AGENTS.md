@@ -13,7 +13,7 @@ Readability is important.
 ## Commands
 
 - **Validate**: `npx gscan .` - Run Ghost theme validator (required before deploy)
-- **Deploy**: Automatic via GitLab CI on push to `main` branch
+- **Deploy**: Automatic via GitHub Actions on push to `main` branch
 - **No tests** - This is a simple Ghost theme, validation via gscan only
 
 ## Stack
