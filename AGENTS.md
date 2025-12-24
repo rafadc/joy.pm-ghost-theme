@@ -35,3 +35,7 @@ Readability is important.
 - `index.hbs` - Homepage post listing
 - `post.hbs` / `page.hbs` - Single post/page templates
 - `partials/` - Reusable template fragments
+
+## Development
+
+- You can check that in production this is working using gh command line.
