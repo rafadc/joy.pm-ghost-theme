@@ -11,6 +11,16 @@
     "author": {
         "email": "rafael@micubiculo.com"
     },
+    "scripts": {
+        "lint": "gscan .",
+        "lint:css": "stylelint 'assets/css/**/*.css'",
+        "test": "npm run lint && npm run lint:css"
+    },
+    "devDependencies": {
+        "gscan": "^4.43.2",
+        "stylelint": "^16.0.0",
+        "stylelint-config-standard": "^36.0.0"
+    },
     "screenshots": {
         "desktop": "assets/screenshot-desktop.jpg",
         "mobile": "assets/screenshot-mobile.jpg"
