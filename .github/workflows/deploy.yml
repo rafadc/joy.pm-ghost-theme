@@ -38,7 +38,7 @@ jobs:
           http_code=$(curl -sS -o response.json -w "%{http_code}" -X POST \
             -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" \
             -F "file=@theme.zip" \
-            "https://joy.pm/ghost/api/v4/admin/themes/upload/")
+            "https://joy.pm/ghost/api/v5/admin/themes/upload/")
           echo "HTTP ${http_code}"
           echo "Response:"
           cat response.json
