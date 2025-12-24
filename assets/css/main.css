@@ -25,6 +25,10 @@ header {
     padding-bottom: 14px;
 }
 
+header .topbar {
+    display: block;
+}
+
 header span a {
     margin-right: 20px;
     color: #ffb300;
