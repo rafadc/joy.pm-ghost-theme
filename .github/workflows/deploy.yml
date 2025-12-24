@@ -33,7 +33,7 @@ jobs:
       - name: Deploy to Ghost
         env:
           GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
-          run: |
+        run: |
             set -euo pipefail
             token=$(node -e "
               const crypto = require('crypto');
