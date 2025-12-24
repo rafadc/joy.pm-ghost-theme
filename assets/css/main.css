@@ -28,7 +28,7 @@ header.site-header {
     left: 0;
     padding-left: 70px;
     padding-top: 14px;
-    padding-bottom: 14px;
+    padding-bottom: 0;
 }
 
 header.site-header .topbar {
