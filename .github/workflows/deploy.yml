@@ -27,12 +27,12 @@ jobs:
       - name: Validate theme
         run: gscan .
 
-      - name: Create theme zip
-        run: zip -r theme.zip . -x "*.git*" "node_modules/*" ".github/*"
+       - name: Create theme zip
+         run: zip -r theme.zip . -x "*.git*" "node_modules/*" ".github/*"
 
-       - name: Deploy to Ghost
-         env:
-           GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
+      - name: Deploy to Ghost
+        env:
+          GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
           run: |
             set -euo pipefail
             token=$(node -e "
