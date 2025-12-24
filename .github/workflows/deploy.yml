@@ -1,0 +1,40 @@
+name: Deploy Ghost Theme
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-ghost-theme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zip
+          npm install -g gscan
+
+      - name: Validate theme
+        run: gscan .
+
+      - name: Create theme zip
+        run: zip -r theme.zip . -x "*.git*" "node_modules/*" ".gitlab-ci.yml" ".github/*"
+
+      - name: Deploy to Ghost
+        env:
+          GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
+        run: |
+          curl -X POST \
+            -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" \
+            -F "file=@theme.zip" \
+            "https://joy.pm/ghost/api/admin/themes/upload/"
