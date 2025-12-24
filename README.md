@@ -30,13 +30,43 @@ This theme is intended for personal use on joy.pm.
 
 ## Development
 
-### Validation
+### Prerequisites
 
-To ensure the theme is compatible with Ghost, use `gscan`. This is the primary validation method as there are no unit tests.
+- [mise](https://mise.jdx.dev/) (for Node.js version management)
+- Node.js 22 (installed automatically via mise)
+
+### Make Commands
+
+| Command | Description |
+|---------|-------------|
+| `make dev` | Install Ghost locally (first run) and start the dev server |
+| `make stop` | Stop the local Ghost server |
+| `make restart` | Restart Ghost (use after adding new files) |
+| `make validate` | Run gscan theme validator |
+| `make clean` | Stop Ghost and remove the local installation |
+
+### Local Development
 
 ```bash
-npx gscan .
+make dev
 ```
+
+On first run, this installs Ghost in `../.ghost-joypm` (outside the theme directory). Then:
+
+1. Visit http://localhost:2368/ghost
+2. Create an admin account
+3. Go to Settings > Design > Change theme
+4. Activate **joypm**
+
+Theme file changes auto-reload. Restart Ghost (`make restart`) only when adding new files.
+
+### Validation
+
+```bash
+make validate
+```
+
+Runs `gscan` to ensure theme compatibility with Ghost.
 
 ## Deployment
 
