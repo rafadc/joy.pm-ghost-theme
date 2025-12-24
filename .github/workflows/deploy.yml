@@ -37,7 +37,7 @@ jobs:
             set -euo pipefail
             token=$(node -e '
               const crypto = require("crypto");
-              const [id, secret] = "${GHOST_ADMIN_API_KEY}".split(":");
+              const [id, secret] = process.env.GHOST_ADMIN_API_KEY.split(":");
               const header = Buffer.from(JSON.stringify({alg: "HS256", typ: "JWT", kid: id})).toString("base64url");
               const now = Math.floor(Date.now() / 1000);
               const payload = Buffer.from(JSON.stringify({iat: now, exp: now + 300, aud: "/admin/"})).toString("base64url");
