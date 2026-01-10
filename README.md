@@ -6,7 +6,7 @@ A custom Ghost CMS theme designed for [joy.pm](https://joy.pm), featuring a mini
 
 This theme mimics the look and feel of a terminal-based text editor (like Neovim or Emacs). It prioritizes readability and simplicity, using a dark color scheme and monospaced typography to present content as if it were code or markdown in an editor.
 
-**Version**: 0.2.0
+**Version**: 0.3.0
 
 ## Features & Aesthetic
 
