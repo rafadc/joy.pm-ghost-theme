@@ -71,7 +71,7 @@ h1 {
 
 h2 {
     color: #98be65;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .post-date {
@@ -265,21 +265,21 @@ img {
     .container {
         flex-direction: column;
     }
-    
+
     .right {
         order: -1;
         text-align: center;
         margin-bottom: 2rem;
     }
-    
+
     .site-description {
         display: none;
     }
-    
+
     .filetype {
         display: none;
     }
-    
+
     .content {
         width: 100%;
     }
