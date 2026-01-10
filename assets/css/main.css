@@ -136,9 +136,7 @@ a {
     max-width: 400px;
 }
 
-.right h1 {
-    font-size: 1.5em;
-}
+
 
 .highlight {
     padding: 30px 200px;
@@ -300,7 +298,7 @@ img {
 }
 
 /* Mobile responsive styles */
-@media (width <= 768px) {
+@media (width <=768px) {
     .container {
         flex-direction: column;
     }
