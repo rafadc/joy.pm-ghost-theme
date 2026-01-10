@@ -243,3 +243,20 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .right {
+        order: -1;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .site-description {
+        display: none;
+    }
+}
