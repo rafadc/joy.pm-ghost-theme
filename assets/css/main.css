@@ -322,26 +322,28 @@ img {
     }
 }
 
-/* Post Tags - Retro Button Style */
+/* Post Tags - Bracket Style */
 .article-tag a {
     display: inline-block;
-    background-color: #c0c0c0;
-    color: #000 !important;
+    background: none;
+    color: var(--color-link);
     text-decoration: none;
-    padding: 2px 12px;
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 0.9em;
+    padding: 0;
+    border: none;
+    font-family: var(--font-mono);
+    font-size: 1em;
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
-.article-tag a:active {
-    border-top: 2px solid #000000;
-    border-left: 2px solid #000000;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
+.article-tag a::before {
+    content: "[";
+    margin-right: 4px;
+    color: var(--color-text-muted);
+}
+
+.article-tag a::after {
+    content: "]";
+    margin-left: 4px;
+    color: var(--color-text-muted);
 }
