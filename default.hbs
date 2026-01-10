@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ meta_title }}</title>
-    <link rel="preload" as="style" href="{{ asset "css/main.css"}}" />
+<html lang="{{@site.locale}}">
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+  <title>{{ meta_title }}</title>
+  <link rel="preload" as="style" href="{{ asset " css/main.css"}}" />
 
-    <link rel="stylesheet" type="text/css" href="{{ asset "css/main.css"}}" />
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-   {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
-    it should always be the last tag before the closing head tag --}}
-    {{ghost_head}}
-  </head>
-  <body>
+  <link rel="stylesheet" type="text/css" href="{{ asset " css/main.css"}}" />
 
-    {{> "navigation"}}
+  {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
+  it should always be the last tag before the closing head tag --}}
+  {{ghost_head}}
+</head>
 
-    <div class="site-content">
-        {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
-    </div>
+<body>
 
-<footer>
-  <span>/code/joy-of-programming/blog.md <b class="branch">(master)</b></span><span class="filetype">UTF-8 Markdown</span>
-</footer>
+  {{> "navigation"}}
 
-{{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
-{{ghost_foot}}
+  <div class="site-content">
+    {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
+  </div>
+
+  <footer>
+    <span>/code/joy-of-programming/blog.md <b class="branch">(master)</b></span><span class="filetype">UTF-8
+      Markdown</span>
+  </footer>
+
+  {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing
+  body tag --}}
+  {{ghost_foot}}
 
 </body>
+
 </html>
