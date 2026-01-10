@@ -271,4 +271,8 @@ img {
     .site-description {
         display: none;
     }
+    
+    .filetype {
+        display: none;
+    }
 }
