@@ -102,6 +102,12 @@ a {
     width: 100%;
 }
 
+.post-feed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .right {
     text-align: right;
     max-width: 400px;

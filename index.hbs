@@ -1,29 +1,25 @@
-{{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
-
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
+{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template
+  --}} {{!-- The main content area --}} <main id="site-main" class="site-main outer">
   <div class="container">
     <div class="left">
       <h1># Latest blog posts</h1>
-      <div class="post-feed">
+      <ul class="post-feed">
         {{#foreach posts}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "post-card"}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> "post-card"}}
         {{/foreach}}
-      </div>
+      </ul>
       {{pagination}}
     </div>
 
     <div class="right">
-      <img id="logo" src="{{asset "images/minilogo.png"}}" />
+      <img id="logo" src="{{asset " images/minilogo.png"}}" />
       <br>
       <h1>The joy of programming</h1>
 
       {{#if @site.description}}
-          <p class="site-description">{{@site.description}}</p>
+      <p class="site-description">{{@site.description}}</p>
       {{/if}}
     </div>
   </div>
-</main>
+  </main>
