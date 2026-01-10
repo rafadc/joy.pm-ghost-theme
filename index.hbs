@@ -8,7 +8,7 @@ into the {body} of the default.hbs template --}}
     <div class="left">
       <h1># Latest blog posts</h1>
       <div class="post-feed">
-        {{#foreach posts}}
+        {{#foreach posts order="published_at desc"}}
             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
             {{> "post-card"}}
         {{/foreach}}
