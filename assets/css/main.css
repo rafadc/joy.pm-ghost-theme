@@ -108,6 +108,10 @@ a {
     margin: 0 0 20px 0;
 }
 
+.post-feed li {
+    margin-bottom: 5px;
+}
+
 .right {
     text-align: right;
     max-width: 400px;
