@@ -1,29 +1,19 @@
- {{!< default}}
+{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} tag of the default.hbs template
+  --}} {{#post}} {{!-- Everything inside the #post block pulls data from the post --}} <h1># {{ title }}</h1>
+  <h2>
+    +++
+    <time class="byline-meta-date" datetime="{{date format=" YYYY-MM-DD"}}">{{date}}</time>
+    +++
+  </h2>
 
-{{!-- The tag above means: insert everything in this file
-into the {body} tag of the default.hbs template --}}
+  <div class="article-tag post-card-tags">
+    {{#foreach tags}}
+    <a href="{{url}}">{{name}}</a>
+    {{/foreach}}
+  </div>
 
+  <div class="content">
+    {{ content }}
+  </div>
 
-{{#post}}
-{{!-- Everything inside the #post block pulls data from the post --}}
-
-<h1># {{ title }}</h1>
-<h2>
-  +++
-  <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-  +++
-</h2>
-
-<div class="article-tag post-card-tags">
-  {{#primary_tag}}
-    <span class="post-card-primary-tag">
-      <a href="{{url}}">{{name}}</a>
-    </span>
-  {{/primary_tag}}
-</div>
-
-<div class="content">
-  {{ content }}
-</div>
-
-{{/post}}
+  {{/post}}

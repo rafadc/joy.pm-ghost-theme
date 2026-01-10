@@ -321,3 +321,27 @@ img {
         width: 100%;
     }
 }
+
+/* Post Tags - Retro Button Style */
+.article-tag a {
+    display: inline-block;
+    background-color: #c0c0c0;
+    color: #000 !important;
+    text-decoration: none;
+    padding: 2px 12px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.article-tag a:active {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
